@@ -1,0 +1,20 @@
+<div class="animated fadeIn">
+
+    <h2 class="display-4 pb-4">Resultados para<small>{{strBusqueda}}</small></h2>
+
+    <!-- *ngIf funciona en torno a un valor boolean -->
+    <div *ngIf=" Resultados.length === 0" class="alert alert-info animated fadeIn" role="alert">
+        No se encuentran resultados para el termino<b>
+        {{ strBusqueda }}</b>
+    </div>
+    <!--   If   -->
+    <!--si    no-->
+    <!--true Else(False) -->
+
+    <div *ngIf=" Resultados.length  > 0" class="card-columns">
+        <!-- La declaracion let i = index contabiliza la emision del *ngFor -->
+        <app-hero-card [PadreHero]="Hero" [Index]="Hero.index" *ngFor="let Hero of Resultados; let i = index"></app-hero-card>
+        
+    </div>
+    <!-- </div> -->
+</div>
